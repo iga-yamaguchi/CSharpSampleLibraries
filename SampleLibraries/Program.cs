@@ -1,4 +1,4 @@
-﻿#define construct
+﻿#define linq
 using SampleLibraries.Async;
 using SampleLibraries.CodeContracts;
 using SampleLibraries.Iterator;
@@ -38,7 +38,10 @@ namespace SampleLibraries
             new GenericsSample().Exec();
 #elif async
             new AsyncFunctions().Main();
-
+            var single = new SampleAsync().GetSingleAsync();
+            Console.WriteLine(single.Result);
+            var multi = new SampleAsync().GetMultiAsync();
+            Console.WriteLine(multi.Result);
 #elif gettersetter
 
             //var people = new People();
